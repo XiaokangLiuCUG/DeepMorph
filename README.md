@@ -1,2 +1,2 @@
 # DeepMorph
-Morphological analysis of latest Permian to earliest Triassic marine fossil
+Morphological analysis of the latest Permian to earliest Triassic marine fossils
