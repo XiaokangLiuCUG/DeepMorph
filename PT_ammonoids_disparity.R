@@ -235,7 +235,7 @@ survivors_variances
 num_survivors = length(survivors)
 num_changhsingian = length(changhsingian)
 num_resampling = 10000
-sub_changhsingian = variance(num_changhsingian,PCA_data$x[changhsingian,],num_resampling)
+sub_changhsingian = variance(num_survivors,PCA_data$x[changhsingian,],num_resampling)
 output_cha = c(mean(sub_changhsingian),sd(sub_changhsingian),quantile(sub_changhsingian,0.025),quantile(sub_changhsingian,0.975))
 output_cha
 
