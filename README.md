@@ -9,11 +9,11 @@ Morphological analysis of the latest Permian to earliest Triassic marine fossils
  
 3. U2-Net was  used to segment fossil areas by running the u2net_test.py. Please add your path of the model and image file
  ```
-python path_to_env/u2net_test.py
+python .../u2net_test.py
 ```
 3. Then, the contours of the fossil can be extracted using ammonoids_landmarks.py. ps change to your path of the binary image file obtained from the second step. Fossil contours will be saved as coordinates in a CSV file. Among them, four landmarks and 60 will be extracted as shown in the figure above (trait matrix). 
  ```
-python path_to_env/u2net_test.py 
+python .../u2net_test.py 
 ```
 4. Generalized Procrustes analysis (GPA) was conducted to align shells and remove the size effect, then we can calculate the disparity of different subsets, as demonstrated in PT_ammonoids_disparity.R
 
