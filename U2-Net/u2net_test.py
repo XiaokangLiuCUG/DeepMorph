@@ -60,7 +60,10 @@ def main():
     # --------- 1. get image path and name ---------
     model_name='u2net'#u2netp
     file_name = model_name
-    #image_dir = r'E:\PTimages\ammonoids\images'#path of fossil images 
+    ###############################################################
+    ############### path to your fossil images file ###############
+    ###############################################################
+    image_dir = r'E:\PTimages\ammonoids\images' #path to your fossil images file
 
     clade = image_dir.split("\\")[-1]
     prediction_dir = os.path.join(os.getcwd(), 'test_data', clade + os.sep)
