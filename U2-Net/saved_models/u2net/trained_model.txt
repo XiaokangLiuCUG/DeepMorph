@@ -1,1 +1,1 @@
-pre-trained models are available from: https://github.com/xuebinqin/U-2-Net
+The original pre-trained models are available from: https://github.com/xuebinqin/U-2-Net
