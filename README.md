@@ -5,8 +5,9 @@ Morphological analysis of the latest Permian to earliest Triassic marine fossils
 
 
 ## How to use DeepMorph
-1. Prepare the DeepMorph environment based on the requirements.txt
-2. U2-Net is used to segment fossil areas by running the u2net_test.py. Please add your path of the model and image file
+1. Prepare the DeepMorph environment based on the requirements.txt. The DeepMorph was implemented in Python (> 3.6.5), Pytorch (v. 1.10.2), and torchvision (v. 0.11.3+cu113).
+ 
+3. U2-Net is used to segment fossil areas by running the u2net_test.py. Please add your path of the model and image file
  ```
 python path_to_env/u2net_test.py
 ```
