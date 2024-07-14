@@ -299,14 +299,13 @@ if __name__ == '__main__':
     num_front_semilandmarks = 15
     num_lateral_semilandmarks = 20
     total_landmarks = []
-    #path = r'E:\brachiopod bc view\Abrekia applanata fig1-32-c=Anisian=Sun-Ye-1982.png'
-    #path = r'E:\brachiopod bc view\Abrekia applanata fig1-31-b=Anisian=Sun-Ye-1982_binary.png'
-    #path = r'E:\brachiopod bc view\Nudirostralina subtrinodosi fig8-a=.png'
     a_view = np.array([])
     b_view = np.array([])
     c_view = np.array([])
     d_view = np.array([])
-    #path = r'E:\Python_learning\PyTorch\U-2-Net-master\test_data\u2net_results_Ammonoidea'#########################
+    ###############################################################
+    ############ path to your binary fossil image file ############
+    ###############################################################
     path = r'E:\Python_learning\PyTorch\U-2-Net-master\test_data\u2net_ammonoid'
     img_lists, species_names, total_views, img_names, genus = get_list(path)
     for path in img_lists:
