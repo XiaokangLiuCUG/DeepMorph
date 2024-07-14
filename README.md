@@ -18,4 +18,4 @@ python path_to_env/u2net_test.py
 4. Generalized Procrustes analysis (GPA) was conducted to align shells and remove the size effect, then we can calculate the disparity of different subsets, as demonstrated in PT_ammonoids_disparity.R
 
 ## Citation
-Liu X, Song H, Chu D, et al. Heterogeneous selectivity and morphological evolution of marine clades during the Permian–Triassic mass extinction[J]. Nature Ecology & Evolution, 2024: 1-11.
+Liu X, Song H, Chu D, Dai, X., Wang, F., and Silvestro D. Heterogeneous selectivity and morphological evolution of marine clades during the Permian–Triassic mass extinction[J]. Nature Ecology & Evolution, 2024: 1-11.
