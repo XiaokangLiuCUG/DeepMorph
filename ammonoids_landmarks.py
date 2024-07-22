@@ -12,7 +12,7 @@ def pad_with(vector, pad_width, iaxis, kwargs):
     vector[-pad_width[1]:] = pad_value
 
 # contours
-def get_coordinates(path,):
+def get_coordinates(path):
     image = Image.open(path).convert("L")
     img_array = np.array(image)
     img_array[img_array>=150]=255
@@ -315,14 +315,7 @@ if __name__ == '__main__':
     num_lower_semilandmarks = 15
     num_front_semilandmarks = 15
     num_lateral_semilandmarks = 20
-    total_landmarks = []
-    #path = r'E:\brachiopod bc view\Abrekia applanata fig1-32-c=Anisian=Sun-Ye-1982.png'
-    #path = r'E:\brachiopod bc view\Abrekia applanata fig1-31-b=Anisian=Sun-Ye-1982_binary.png'
-    #path = r'E:\brachiopod bc view\Nudirostralina subtrinodosi fig8-a=.png'
-    a_view = np.array([])
-    b_view = np.array([])
-    c_view = np.array([])
-    d_view = np.array([])
+    a_view = np.array([])# choose which view of images need to be analysed
     #path = r'E:\Python_learning\PyTorch\U-2-Net-master\test_data\u2net_results_Ammonoidea'#########################
     path = r'E:\Python_learning\PyTorch\U-2-Net-master\test_data\u2net_ammonoid'
     img_lists, species_names, total_views, img_names, genus = get_list(path)
