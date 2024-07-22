@@ -44,28 +44,44 @@ def get_coordinates(path,):
     return np.array(coordinates,dtype=int)
 
 ###### four fixed landmarks ######
-def four_landmarks(X,Y):
+def four_landmarks(coordinates):
+    X,Y = coordinates[:,0],coordinates[:,1]
     num_top_index = [i for i,x in enumerate(Y.tolist()) if x == int(np.min(Y))]
-    middle_index = num_top_index[int(len(num_top_index) / 2)]
-    top_point_x, top_point_y = X[middle_index],Y[middle_index]
-    if not ((np.min(X) + np.max(X))/2)*0.6 < top_point_x < ((np.min(X) + np.max(X))/2)*1.4:
-        top_point_x = int((np.min(X) + np.max(X)/2))
+    middle_top_index = num_top_index[int(len(num_top_index) / 2)]
+    top_point_x, top_point_y = X[middle_top_index],Y[middle_top_index]
+    
+    num_down_index = [i for i,x in enumerate(Y.tolist()) if x == int(np.max(Y))]
+    middle_down_index = num_down_index[int(len(num_down_index) / 2)]
+    down_point_x, down_point_y = X[middle_down_index],Y[middle_down_index]
+    
+    if not (abs(top_point_x-(np.min(X) + np.max(X))/2)) / ((np.min(X) + np.max(X))/2-np.min(X)) < 0.2:
+        top_point_x = int((np.min(X) + np.max(X))/2)
         top_middel_index = [i for i,x in enumerate(X.tolist()) if x == top_point_x]
         if len(top_middel_index)>2:
-            print("********* needs to revise *********")
+            print("********* need to revise *********")
         top_point_y = Y[top_middel_index[0]]
-    num_low_index = [i for i,x in enumerate(X.tolist()) if x == top_point_x]
-    low_point_x, low_point_y = X[num_low_index[-1]],Y[num_low_index[-1]]
-    left_point_y = right_point_y = int((top_point_y + low_point_y) / 2)
+        #down_point_x, down_point_y = top_point_x, Y[top_middel_index[-1]]
+        
+    if not (abs(down_point_x-(np.min(X) + np.max(X))/2))/ ((np.min(X) + np.max(X))/2-np.min(X)) < 0.2:
+        down_point_x = int((np.min(X) + np.max(X))/2)
+        down_middel_index = [i for i,x in enumerate(X.tolist()) if x == down_point_x]
+        if len(down_middel_index)>2:
+            print("********* need to revise *********")
+        down_point_y = Y[down_middel_index[-1]]
+        #down_point_x, down_point_y = top_point_x, Y[down_point_y]
+        
+    left_point_y = right_point_y = int((np.min(Y) + np.max(Y))/2) #int((top_point_y + down_point_y) / 2)#whole shell mean Y
     left_rigeht_point_index = [i for i,x in enumerate(Y.tolist()) if x == left_point_y]
     left_point_index = [i for i in left_rigeht_point_index if X[i] < top_point_x]
     right_point_index = [i for i in left_rigeht_point_index if X[i] > top_point_x]
     left_point_x = X[left_point_index[int((len(left_point_index)-1)/2)]]
     right_point_x = X[right_point_index[int((len(right_point_index)-1)/2)]]
-    landmarks_x = [top_point_x,low_point_x,left_point_x,right_point_x]
-    landmarks_y = [top_point_y,low_point_y,left_point_y,right_point_y]
+    landmarks_x = [top_point_x,down_point_x,left_point_x,right_point_x]
+    landmarks_y = [top_point_y,down_point_y,left_point_y,right_point_y]
     four_landmarks_points = np.stack((landmarks_x,landmarks_y),axis = 1)
+
     return four_landmarks_points
+
 
 ###### find left right landmarks ######
 def left_right_landmarks(X,Y):
@@ -94,7 +110,7 @@ def top_down_landmarks(coordinates):
     middle_down_index = num_down_index[int(len(num_down_index) / 2)]
     down_point_x, down_point_y = X[middle_down_index],Y[middle_down_index]
     
-    if not (abs(top_point_x-(np.min(X) + np.max(X)))/2)/ ((np.min(X) + np.max(X))/2-np.min(X)) < 0.2:
+    if not (abs(top_point_x-(np.min(X) + np.max(X)))/2)/ ((np.min(X) + np.max(X))/2-np.min(X)) < 0.2
         print("out of upper boundary")
         top_point_x = int((np.min(X) + np.max(X)/2))
         top_middel_index = [i for i,x in enumerate(X.tolist()) if x == top_point_x]
@@ -103,7 +119,7 @@ def top_down_landmarks(coordinates):
         top_point_y = Y[top_middel_index[0]]
         #down_point_x, down_point_y = top_point_x, Y[top_middel_index[-1]]
     
-    if not (abs(down_point_x-(np.min(X) + np.max(X)))/2)/ ((np.min(X) + np.max(X))/2-np.min(X)) < 0.2:
+    if not (abs(down_point_x-(np.min(X) + np.max(X)))/2)/ ((np.min(X) + np.max(X))/2-np.min(X)) < 0.2
         down_point_x = int((np.min(X) + np.max(X)/2))
         down_middel_index = [i for i,x in enumerate(X.tolist()) if x == down_point_x]
         if len(down_middel_index)>2:
@@ -299,20 +315,20 @@ if __name__ == '__main__':
     num_front_semilandmarks = 15
     num_lateral_semilandmarks = 20
     total_landmarks = []
+    #path = r'E:\brachiopod bc view\Abrekia applanata fig1-32-c=Anisian=Sun-Ye-1982.png'
+    #path = r'E:\brachiopod bc view\Abrekia applanata fig1-31-b=Anisian=Sun-Ye-1982_binary.png'
+    #path = r'E:\brachiopod bc view\Nudirostralina subtrinodosi fig8-a=.png'
     a_view = np.array([])
     b_view = np.array([])
     c_view = np.array([])
     d_view = np.array([])
-    ###############################################################
-    ############ path to your binary fossil image file ############
-    ###############################################################
+    #path = r'E:\Python_learning\PyTorch\U-2-Net-master\test_data\u2net_results_Ammonoidea'#########################
     path = r'E:\Python_learning\PyTorch\U-2-Net-master\test_data\u2net_ammonoid'
     img_lists, species_names, total_views, img_names, genus = get_list(path)
     for path in img_lists:
         coordinates = get_coordinates(path)
-        print(path)
-        top_down_landmarks_points = top_down_landmarks(coordinates)
-        alandmarks = lateral_view(top_down_landmarks_points, coordinates,num_lateral_semilandmarks)
+        four_landmarks_points = four_landmarks(coordinates)
+        alandmarks = dorsal_view(four_landmarks_points,coordinates,num_upper_semilandmarks,num_lower_semilandmarks)
         a_view = np.append(a_view,alandmarks.reshape(alandmarks.shape[0] * 2))
     print("extraction finished")
     workbook = xlwt.Workbook(encoding = 'utf-8')
