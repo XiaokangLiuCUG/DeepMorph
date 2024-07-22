@@ -94,7 +94,7 @@ def top_down_landmarks(coordinates):
     middle_down_index = num_down_index[int(len(num_down_index) / 2)]
     down_point_x, down_point_y = X[middle_down_index],Y[middle_down_index]
     
-    if not (abs(top_point_x-(np.min(X) + np.max(X)))/2)/ ((np.min(X) + np.max(X))/2-np.min(X)) < 0.2
+    if not (abs(top_point_x-(np.min(X) + np.max(X)))/2)/ ((np.min(X) + np.max(X))/2-np.min(X)) < 0.2:
         print("out of upper boundary")
         top_point_x = int((np.min(X) + np.max(X)/2))
         top_middel_index = [i for i,x in enumerate(X.tolist()) if x == top_point_x]
@@ -103,7 +103,7 @@ def top_down_landmarks(coordinates):
         top_point_y = Y[top_middel_index[0]]
         #down_point_x, down_point_y = top_point_x, Y[top_middel_index[-1]]
     
-    if not (abs(down_point_x-(np.min(X) + np.max(X)))/2)/ ((np.min(X) + np.max(X))/2-np.min(X)) < 0.2
+    if not (abs(down_point_x-(np.min(X) + np.max(X)))/2)/ ((np.min(X) + np.max(X))/2-np.min(X)) < 0.2:
         down_point_x = int((np.min(X) + np.max(X)/2))
         down_middel_index = [i for i,x in enumerate(X.tolist()) if x == down_point_x]
         if len(down_middel_index)>2:
