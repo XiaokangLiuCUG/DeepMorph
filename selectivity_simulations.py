@@ -1,9 +1,9 @@
+# Created by Xiaokang Liu on 28/02/2024 => xkliu@cug.edu.cn
+
 import numpy as np
 import matplotlib.pyplot as plt
 #import random
-import numpy as np
-import matplotlib.pyplot as plt
-#import random
+
 def plot_results(coordinates,lateral_index):
     fig, ax = plt.subplots(1, 1,figsize=(7,7))
     #ax.invert_yaxis()
