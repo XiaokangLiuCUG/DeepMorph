@@ -315,7 +315,7 @@ if __name__ == '__main__':
     num_upper_semilandmarks = 15
     num_lower_semilandmarks = 15
     num_front_semilandmarks = 15
-    num_lateral_semilandmarks = 20
+    num_lateral_semilandmarks = 15
     a_view = np.array([])# choose which view of images need to be analysed
     #path = r'E:\Python_learning\PyTorch\U-2-Net-master\test_data\u2net_results_Ammonoidea'#########################
     path = r'E:\Python_learning\PyTorch\U-2-Net-master\test_data\u2net_ammonoid'
