@@ -13,7 +13,7 @@ python .../u2net_test.py
 ```
 3. Then, the contours of the fossil can be extracted using ammonoids_landmarks.py. ps change to your path of the binary image file obtained from the second step. Fossil contours will be saved as coordinates in a CSV file. Among them, four landmarks and 60 will be extracted as shown in the figure above (trait matrix). Here, I only used one standard view for each fossil specimen.  
  ```
-python .../u2net_test.py 
+python .../ammonoids_landmarks.py 
 ```
 4. Generalized Procrustes analysis (GPA) was conducted to align shells and remove the size effect, then we can calculate the disparity of different subsets, as demonstrated in PT_ammonoids_disparity.R.
 
