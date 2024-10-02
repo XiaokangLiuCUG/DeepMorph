@@ -9,6 +9,7 @@ ammonoid.links <- as.matrix(read.table("C:/Users/xiaokang/Jupyter_code/feature_e
 curves<-as.matrix(read.csv("C:/Users/xiaokang/Jupyter_code/feature_extraction/PTimages/landmarks/ammonoid/ammonoid_curveslide.csv",header = T))
 num_sp = length(row.names(df))
 AA <- array(data = unlist(t(df[,1:128])),dim = c(2,64,num_sp),dimnames=NULL)
+BB <- aperm(AA,c(2,1,3))
 X.gpa <- gpagen(BB, curves=curves,PrinAxes = FALSE,Proj=T)
 # summary(X.gpa)
 # plot(X.gpa)
