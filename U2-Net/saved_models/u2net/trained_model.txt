@@ -1,1 +1,2 @@
 The original pre-trained models are available from: https://github.com/xuebinqin/U-2-Net
+Our newly trained model was uploaded at Zenodo: https://zenodo.org/records/10531896  
