@@ -15,7 +15,7 @@ python .../u2net_test.py
  ```
 python .../ammonoids_landmarks.py 
 ```
-4. Generalized Procrustes analysis (GPA) was conducted to align shells and remove the size effect, then we can calculate the disparity of different subsets, as demonstrated in PT_ammonoids_disparity.R.
+4. Generalized Procrustes analysis (GPA) was conducted to align shells and remove the size effect. We can calculate the disparity of different subsets, as demonstrated in PT_ammonoids_disparity.R. Please note that the ammonoid_curveslide.csv is used to describe the relative positions of semi-landmarks. Its quantity and order must correspond with the coordinates extracted from the ammonoids_landmarks.py. Here, both of them are consistent.
 
 ## Citation
 Liu X, Song H, Chu D, Dai, X., Wang, F., and Silvestro D. Heterogeneous selectivity and morphological evolution of marine clades during the Permian–Triassic mass extinction. Nature Ecology & Evolution, 2024, 8: 1248–1258
