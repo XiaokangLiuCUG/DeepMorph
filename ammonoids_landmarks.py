@@ -338,5 +338,5 @@ if __name__ == '__main__':
         worksheet.write(i+1,1,label=species_names[i])
         worksheet.write(i+1,2,label=genus[i])
         worksheet.write(i+1,3,label=total_views[i])
-    workbook.save("./landmarks/ammonoid/Ammonoidea_lists.xls")#img_lists, species_names, total_views, img_names, genus 
-    np.savetxt('./landmarks/ammonoid/Ammonoidea_landmarks.csv',a_view.reshape(int(a_view.shape[0]/(num_lateral_semilandmarks*4+4)),(num_lateral_semilandmarks*4+4)), delimiter=",",fmt='%d')
+    workbook.save("./Ammonoidea_lists.xls")#img_lists, species_names, total_views, img_names, genus 
+    np.savetxt('./Ammonoidea_landmarks.csv',a_view.reshape(int(len(img_lists)),2 * (num_lateral_semilandmarks*4+4)), delimiter=",",fmt='%d')
